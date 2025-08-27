@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>app49-time-console</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>app49-time-console ⏰</h1>
+  <p>ボタンを押すと現在の時刻をコンソールに表示します</p>
+  <button id="timeBtn">実行</button>
+
+  <script>
+    /*---- 1) DOM参照 ---------------------------*/
+    const timeBtnEl = document.getElementById('timeBtn');
+
+    /*---- 2) 関数 ------------------------------*/
+    // TODO: 現在の時刻を作成し、hh:mm:ss の形にして console.log で表示する関数を作成する
+    const currentTimeFunc = () => {
+      const nowValue = new Date();
+      const h = nowValue.getHours();
+      const m = nowValue.getMinutes();
+      const s = nowValue.getSeconds();
+
+      console.log(`${h}:${m}:${s}`);
+    };
+
+    /*---- 3) イベント登録 ----------------------*/
+    // TODO: ボタンがクリックされたときに関数を呼び出す
+    timeBtnEl.addEventListener('click', () => {
+      currentTimeFunc();
+    });
+  </script>
+</body>
+</html>
