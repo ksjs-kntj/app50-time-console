@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>app68-return-repeat</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    p { margin-top: 20px; font-size: 18px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>app68-return-repeat</h1>
+  <p>067の復習版：関数で <code>return</code> した値を、ボタンを押すと画面に表示します 🔁</p>
+
+  <button id="btn">値を表示</button>
+  <p id="result">ここに表示されます</p>
+
+  <script>
+    // ==================================================
+    // app68-return-repeat / script
+    // 目的：return の流れをもう一度練習する
+    // ==================================================
+
+    /*---- DOM参照 ---------------------------*/
+    const btnEl = document.getElementById('btn');
+    const resultEl = document.getElementById('result');
+
+    /*---- 関数定義 ---------------------------*/
+    // TODO: 引数を受け取ってそのまま出荷する関数を作る
+    const argumentFunc = (argumentData) => {
+      return argumentData;
+    };
+
+    /*---- メイン処理 ---------------------------*/
+    // TODO: 関数を呼び出して戻り値を受け取り、result に反映する関数を作る
+    const receiveFunc = () => {
+      // 材料を工場に入れる
+      const materialValue = argumentFunc("テストだよ②");
+      // 出荷された完成品を画面に反映
+      resultEl.textContent = materialValue;
+      return materialValue;
+    };
+
+    /*---- イベント登録 ---------------------------*/
+    // TODO: ボタンが押されたらメイン処理を実行する
+    btnEl.addEventListener('click', () => {
+      return receiveFunc();
+    });
+  </script>
+</body>
+</html>
